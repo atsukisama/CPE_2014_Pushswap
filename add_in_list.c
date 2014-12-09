@@ -8,8 +8,8 @@
 ** Last update Thu Dec  4 15:10:23 2014 kerebe_p
 */
 
-#include "list.h"
 #include <stdlib.h>
+#include "list.h"
 
 void		add_in_list_t(t_list *l_x, int nb)
 {

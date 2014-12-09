@@ -10,7 +10,6 @@
 
 #include "list.h"
 
-
 void		display_null(t_list *l_a, t_list *l_b, char *op)
 {
   static int	z = 0;

@@ -8,8 +8,8 @@
 ** Last update Thu Dec  4 15:24:39 2014 kerebe_p
 */
 
-#include "list.h"
 #include <stdlib.h>
+#include "list.h"
 
 void		show_list(t_list *l_x, char *def)
 {
