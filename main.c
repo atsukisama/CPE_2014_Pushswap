@@ -51,19 +51,23 @@ int		main(int ac, char **av)
   int		opt;
   int		z;
 
-  if (check_all_nb(av) == -1 || ac == 1)
-    return (0);
+  check_all_nb(av);
   opt = check_opt(av);
   l_a = malloc(sizeof(*l_a));
   l_b = malloc(sizeof(*l_b));
   if (l_a == NULL || l_b == NULL)
-    return (-1);
+    {
+      my_putstr("Malloc on list failed!\n");
+      return (-1);
+    }
   create_root(l_a, l_b);
   put_all(l_a, av);
-  z = is_op(l_a);
+  if ((z = is_op(l_a)) == 0)
+    my_putstr("Nothing to sort!\n");
   algo_long(l_a, l_b, count_list(l_a), opt);
   if (opt == 0 && z == 1)
     my_putchar('\n');
   my_delete_all(l_a);
   my_delete_all(l_b);
+  return (0);
 }

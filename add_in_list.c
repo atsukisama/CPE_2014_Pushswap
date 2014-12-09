@@ -24,6 +24,11 @@ void		add_in_list_t(t_list *l_x, int nb)
       l_x->prev->next = elem;
       l_x->prev = elem;
     }
+  else
+    {
+      my_putstr("Malloc on element of list failed!\n");
+      exit (-1);
+    }
 }
 
 void		add_in_list_h(t_list *l_x, int nb)
@@ -38,5 +43,10 @@ void		add_in_list_h(t_list *l_x, int nb)
       elem->prev = l_x;
       l_x->next->prev = elem;
       l_x->next = elem;
+    }
+  else
+    {
+      my_putstr("Malloc on element of list failed!\n");
+      exit (-1);
     }
 }

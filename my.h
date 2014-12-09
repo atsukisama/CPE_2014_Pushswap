@@ -1,5 +1,5 @@
 /*
-** my.h for lib in /home/kerebel/Documents/EPITECH/doublechaine
+** my.h for lib in /home/kerebel/Documents/EPITECH/CPE_2014_Pushswap
 ** 
 ** Made by kerebe_p
 ** Login   <kerebe_p@epitech.eu>
@@ -20,10 +20,11 @@ void	display_null(t_list *l_a, t_list *l_b, char *op);
 void	display_v(t_list *l_a, t_list *l_b, char *op);
 void	display_vt(t_list *l_a, t_list *l_b, char *op);
 int	check_nb(char *t);
-int	check_all_nb(char **av);
+void	check_all_nb(char **av);
 int	check_opt(char **av);
 void	my_put_op(char *op, int i, t_list *l_a, t_list *l_b);
 void	create_root(t_list *l_a, t_list *l_b);
+void	put_all(t_list *l_x, char **av);
 void	my_delete(t_list *l_x);
 void	my_delete_all(t_list *l_x);
 int     my_getnbr_nop(char *str);

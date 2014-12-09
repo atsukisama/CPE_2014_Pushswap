@@ -30,7 +30,7 @@ int	check_nb(char *t)
   return (0);
 }
 
-int	check_all_nb(char **av)
+void	check_all_nb(char **av)
 {
   int	i;
 
@@ -39,10 +39,12 @@ int	check_all_nb(char **av)
     {
       if (check_nb(av[i]) == -1 && my_strcmp(av[i], "-v") != 0
 	  && my_strcmp(av[i], "-vt") != 0)
-	return (-1);
+	{
+	  my_putstr("Wrong argument detected!\n");
+	  exit(-1);
+	}
       i = i + 1;
     }
-  return (0);
 }
 
 int	check_opt(char **av)
