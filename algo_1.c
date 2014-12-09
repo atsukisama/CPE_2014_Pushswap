@@ -66,10 +66,6 @@ void	algo_long(t_list *l_a, t_list *l_b, int ac, int opt)
   int	i;
 
   i = 1;
-  if (opt != 0)
-    my_pb(l_a, l_b, opt);
-  else
-    my_pb(l_a, l_b, 0);
   while (i < (ac / 3))
     {
       my_pb(l_a, l_b, opt);

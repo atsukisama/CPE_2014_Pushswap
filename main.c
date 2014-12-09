@@ -19,7 +19,8 @@ void	my_put_op(char *op, int i, t_list *l_a, t_list *l_b)
   aff[0] = &display_null;
   aff[1] = &display_v;
   aff[2] = &display_vt;
-  aff[i](l_a, l_b, op);
+  if (i >= 0)
+    aff[i](l_a, l_b, op);
 }
 
 void	create_root(t_list *l_a, t_list *l_b)
@@ -30,12 +31,25 @@ void	create_root(t_list *l_a, t_list *l_b)
   l_b->next = l_b;
 }
 
+void	put_all(t_list *l_x, char **av)
+{
+  int	i;
+
+  i = 1;
+  while (av[i] != NULL)
+    {
+      if (check_nb(av[i]) != -1)
+	add_in_list_t(l_x, my_getnbr(av[i]));
+      i = i + 1;
+    }
+}
+
 int		main(int ac, char **av)
 {
   t_list	*l_a;
   t_list	*l_b;
-  int		i;
   int		opt;
+  int		z;
 
   if (check_all_nb(av) == -1 || ac == 1)
     return (0);
@@ -45,15 +59,10 @@ int		main(int ac, char **av)
   if (l_a == NULL || l_b == NULL)
     return (-1);
   create_root(l_a, l_b);
-  i = 1;
-  while (av[i] != NULL)
-    {
-      if (check_nb(av[i]) != -1)
-	add_in_list_t(l_a, my_getnbr(av[i]));
-      i = i + 1;
-    }
+  put_all(l_a, av);
+  z = is_op(l_a);
   algo_long(l_a, l_b, count_list(l_a), opt);
-  if (opt == 0)
+  if (opt == 0 && z == 1)
     my_putchar('\n');
   my_delete_all(l_a);
   my_delete_all(l_b);
