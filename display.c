@@ -8,7 +8,7 @@
 ** Last update Tue Dec  9 12:29:25 2014 kerebe_p
 */
 
-#include "list.h"
+#include "include/my.h"
 
 void		display_null(t_list *l_a, t_list *l_b, char *op)
 {

@@ -18,4 +18,4 @@ typedef struct	s_list
   struct s_list *prev;
 }		t_list;
 
-#endif /* LIST_H_ */
+#endif

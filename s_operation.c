@@ -8,7 +8,7 @@
 ** Last update Thu Dec  4 15:34:20 2014 kerebe_p
 */
 
-#include "list.h"
+#include "include/list.h"
 
 void		my_sa(t_list *l_a, t_list *l_b, int i)
 {

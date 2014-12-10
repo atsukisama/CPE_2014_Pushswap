@@ -8,7 +8,7 @@
 ** Last update Sat Dec  6 17:41:23 2014 kerebe_p
 */
 
-#include "list.h"
+#include "include/my.h"
 
 void		my_rra(t_list *l_a, t_list *l_b, int i)
 {

@@ -8,7 +8,7 @@
 ** Last update Thu Dec  4 15:54:03 2014 kerebe_p
 */
 
-#include "list.h"
+#include "include/my.h"
 
 void		my_pb(t_list *l_a, t_list *l_b, int i)
 {

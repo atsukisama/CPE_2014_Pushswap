@@ -8,10 +8,7 @@
 ** Last update Sat Dec  6 23:03:20 2014 kerebe_p
 */
 
-#include "list.h"
-# define FIRST(l_x) (l_x->next->nb)
-# define SECND(l_x) (l_x->next->next->nb)
-# define LAST(l_x) (l_x->prev->nb)
+#include "include/my.h"
 
 void	algo_la(t_list *l_a, t_list *l_b, int i)
 {

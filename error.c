@@ -8,7 +8,7 @@
 ** Last update Tue Dec  2 14:24:07 2014 kerebe_p
 */
 
-#include <stdlib.h>
+#include "include/my.h"
 
 int	check_nb(char *t)
 {

@@ -8,7 +8,7 @@
 ** Last update Fri Dec  5 00:42:33 2014 kerebe_p
 */
 
-#include "list.h"
+#include "include/my.h"
 
 int		is_op(t_list *l_a)
 {

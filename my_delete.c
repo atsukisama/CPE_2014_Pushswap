@@ -8,8 +8,7 @@
 ** Last update Thu Dec  4 16:00:31 2014 kerebe_p
 */
 
-#include <stdlib.h>
-#include "list.h"
+#include "include/my.h"
 
 void	my_delete(t_list *l_x)
 {

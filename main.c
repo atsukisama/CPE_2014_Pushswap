@@ -8,9 +8,7 @@
 ** Last update Thu Dec  4 12:46:21 2014 kerebe_p
 */
 
-#include <stdlib.h>
-#include "list.h"
-#include "my.h"
+#include "include/my.h"
 
 void	my_put_op(char *op, int i, t_list *l_a, t_list *l_b)
 {
