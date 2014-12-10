@@ -16,7 +16,7 @@ void		my_pb(t_list *l_a, t_list *l_b, int i)
 
   tmp = l_a->next;
   l_a->next = l_a->next->next;
-  l_a->next->prev = l_a->next;
+  l_a->next->prev = l_a;
   tmp->next = l_b->next;
   tmp->prev = l_b;
   l_b->next = tmp;
@@ -30,7 +30,7 @@ void		my_pa(t_list *l_a, t_list *l_b, int i)
 
   tmp = l_b->next;
   l_b->next = l_b->next->next;
-  l_b->next->prev = l_b->next;
+  l_b->next->prev = l_b;
   tmp->next = l_a->next;
   tmp->prev = l_a;
   l_a->next = tmp;
