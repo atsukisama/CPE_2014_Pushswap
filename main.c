@@ -34,12 +34,19 @@ void	create_root(t_list *l_a, t_list *l_b)
 void	put_all(t_list *l_x, char **av)
 {
   int	i;
+  int	c;
 
   i = 1;
   while (av[i] != NULL)
     {
       if (check_nb(av[i]) != -1)
-	add_in_list_t(l_x, my_getnbr(av[i]));
+	c = add_in_list_t(l_x, my_getnbr(av[i]));
+      if (c == -1)
+	{
+	  my_delete_all(l_x);
+	  my_putstr("Failed to malloc elements in list!\n");
+	  exit (-1);
+	}
       i = i + 1;
     }
 }
