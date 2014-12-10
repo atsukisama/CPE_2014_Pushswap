@@ -58,12 +58,33 @@ void	algo_lb(t_list *l_a, t_list *l_b, int i)
     }
 }
 
-void	algo_long(t_list *l_a, t_list *l_b, int ac, int opt)
+int	algo_start(t_list *l_a, t_list *l_b, int ac)
+{
+  int	z;
+
+  z = ac / 3 - 1;
+  if (LAST(l_a) < FIRST(l_a) && l_a->next->next->next != l_a)
+    my_ra(l_a, l_b, 3);
+  else if (FIRST(l_a) > SECND(l_a) && l_a->next->next != l_a)
+    my_sa(l_a, l_b, 3);
+  else if (LAST(l_a) <= FIRST(l_a) && l_a->next != l_a->prev)
+    my_rra(l_a, l_b, 3);
+  else
+    my_pb(l_a, l_b, 3);
+  return (z);
+}
+
+void	algo_sort(t_list *l_a, t_list *l_b, int ac, int opt)
 {
   int	i;
+  int	z;
 
   i = 1;
-  while (i < (ac / 3))
+  if (opt == 0)
+    z = algo_start(l_a, l_b, ac);
+  else
+    z = ac / 3;
+  while (i < z)
     {
       my_pb(l_a, l_b, opt);
       i = i + 1;

@@ -17,6 +17,7 @@ void	my_put_op(char *op, int i, t_list *l_a, t_list *l_b)
   aff[0] = &display_null;
   aff[1] = &display_v;
   aff[2] = &display_vt;
+  aff[3] = &display_null_start;
   if (i >= 0)
     aff[i](l_a, l_b, op);
 }
@@ -71,7 +72,8 @@ int		main(int ac, char **av)
     return (-1);
   if ((z = is_op(l_a)) == 0)
     my_putstr("Nothing to sort!\n");
-  algo_long(l_a, l_b, count_list(l_a), opt);
+  else
+    algo_sort(l_a, l_b, count_list(l_a), opt);
   if (opt == 0 && z == 1)
     my_putchar('\n');
   my_delete_all(l_a);

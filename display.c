@@ -10,18 +10,15 @@
 
 #include "include/my.h"
 
+void		display_null_start(t_list *l_a, t_list *l_b, char *op)
+{
+  my_putstr(op);
+}
+
 void		display_null(t_list *l_a, t_list *l_b, char *op)
 {
-  static int	z = 0;
-
-  if (z == 0)
-    my_putstr(op);
-  else
-    {
-      my_putchar(' ');
-      my_putstr(op);
-    }
-  z = z + 1;
+  my_putchar(' ');
+  my_putstr(op);
 }
 
 void		display_v(t_list *l_a, t_list *l_b, char *op)
