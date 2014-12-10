@@ -13,31 +13,27 @@
 void		my_pb(t_list *l_a, t_list *l_b, int i)
 {
   t_list	*tmp;
-  t_list	*tmp2;
 
   tmp = l_a->next;
-  tmp2 = l_b->next;
-  l_a->next->next->prev = l_a;
   l_a->next = l_a->next->next;
-  l_b->next = tmp;
+  l_a->next->prev = l_a->next;
+  tmp->next = l_b->next;
   tmp->prev = l_b;
-  tmp->next = tmp2;
-  tmp2->prev = tmp;
+  l_b->next = tmp;
+  l_b->next->next->prev = tmp;
   my_put_op("pb", i, l_a, l_b);
 }
 
 void		my_pa(t_list *l_a, t_list *l_b, int i)
 {
   t_list	*tmp;
-  t_list	*tmp2;
 
   tmp = l_b->next;
-  tmp2 = l_a->next;
-  l_b->next->next->prev = l_b;
   l_b->next = l_b->next->next;
-  l_a->next = tmp;
+  l_b->next->prev = l_b->next;
+  tmp->next = l_a->next;
   tmp->prev = l_a;
-  tmp->next = tmp2;
-  tmp2->prev = tmp;
+  l_a->next = tmp;
+  l_a->next->next->prev = tmp;
   my_put_op("pa", i, l_a, l_b);
 }
