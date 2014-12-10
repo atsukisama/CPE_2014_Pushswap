@@ -30,7 +30,7 @@ void	check_all_nb(char **av);
 int	check_opt(char **av);
 void	my_put_op(char *op, int i, t_list *l_a, t_list *l_b);
 void	create_root(t_list *l_a, t_list *l_b);
-void	put_all(t_list *l_x, char **av);
+int	put_all(t_list *l_x, char **av);
 void	my_delete(t_list *l_x);
 void	my_delete_all(t_list *l_x);
 int     my_getnbr_nop(char *str);
