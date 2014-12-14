@@ -30,7 +30,7 @@ void	create_root(t_list *l_a, t_list *l_b)
   l_b->next = l_b;
 }
 
-int	put_all(t_list *l_x, char **av)
+int	put_all(t_list *l_x, char **av, t_list *l_b)
 {
   int	i;
   int	c;
@@ -43,8 +43,9 @@ int	put_all(t_list *l_x, char **av)
       if (c == -1)
 	{
 	  my_delete_all(l_x);
+	  my_delete_all(l_b);
 	  my_putstr("Failed to malloc elements in list!\n");
-	  return (-1);
+	  exit (-1);
 	}
       i = i + 1;
     }
@@ -68,8 +69,7 @@ int		main(int ac, char **av)
       return (-1);
     }
   create_root(l_a, l_b);
-  if (put_all(l_a, av) == -1)
-    return (-1);
+  put_all(l_a, av, l_b);
   if ((z = is_op(l_a)) == 0)
     my_putstr("Nothing to sort!\n");
   else
