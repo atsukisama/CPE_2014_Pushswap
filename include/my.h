@@ -19,9 +19,6 @@
 
 int	add_in_list_t(t_list *l_x, int nb);
 int	add_in_list_h(t_list *l_x, int nb);
-void	algo_la(t_list *l_a, t_list *l_b, int i);
-void	algo_lb(t_list *l_a, t_list *l_b, int i);
-int     algo_start(t_list *l_a, t_list *l_b, int ac);
 void	algo_sort(t_list *l_a, t_list *l_b, int ac, int opt);
 void    display_null_start(t_list *l_a, t_list *l_b, char *op);
 void	display_null(t_list *l_a, t_list *l_b, char *op);
